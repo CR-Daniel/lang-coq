@@ -25,12 +25,6 @@ expression {
 
     "(" ")"
 
-    VeracularImport { "From" | "Require" | "Import" | "Export"| "Local" | "Global" | "Include" }
-
-    VernacularScope { "Open"| "Close"| "Delimit" | "Undelimit" | "Bind" }
-
-    Theorem { "Theorem" | "Lemma" | "Remark" | "Fact" | "Corollary" | "Property" | "Proposition" | "Goal" }
-
     Vernacular { "Abort" | "About"| "Add" | "All" | "Arguments" | "Asymmetric" | "Axiom" |
         "Bind" |
         "Canonical" | "Check" | "Class" | "Close" | "Coercion" | "CoFixpoint" | "Comments" |
@@ -59,18 +53,18 @@ expression {
         }
 
     gallina {
-        "as"|"at"|
-        "cofix"| "crush"|
-        "else"| "end"|
-        "False"| "fix"| "for"| "forall"| "fun"|
-        "if"| "in"| "is"|
-        "let"|
-        "match"|
-        "of"|
-        "Prop"|
-        "return"|
-        "struct"|
-        "then"| "True"| "Type"|
+        "as" | "at" |
+        "cofix" | "crush" |
+        "else" | "end" |
+        "False" | "fix" | "for" | "forall" | "fun" |
+        "if" | "in" | "is" |
+        "let" |
+        "match" |
+        "of" |
+        "Prop" |
+        "return" |
+        "struct" |
+        "then" | "True" | "Type" |
         "when"| "with"
         }
 
@@ -114,7 +108,7 @@ expression {
         "Admitted"
     }
 
-    @precedence { Vernacular, Identifier }
+    @precedence { Vernacular, gallina, Identifier }
 }
 
 @detectDelim
