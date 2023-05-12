@@ -21,14 +21,14 @@ expression {
 
     Boolean { "#t" | "#f" }
 
-    LineComment { ";" ![\n]* }
+    LineComment { "(*" ![\n]* "*)"}
 
     space { $[ \t\n\r]+ }
 
     "(" ")"
 
-    Vernacular { "Abort" | "About"| "Add" | "All" | "Arguments" | "Asymmetric" | "Axiom" |
-        "Bind" |
+    vernacular { "Abort" | "About"| "Add" | "All" | "Arguments" | "Asymmetric" | "Axiom" |
+        "Bind" | 
         "Canonical" | "Check" | "Class" | "Close" | "Coercion" | "CoFixpoint" | "Comments" |
         "CoInductive" | "Compute" | "Context" | "Constructors" | "Contextual" | "Corollary" |
         "Defined" | "Definition" | "Delimit" |
@@ -54,7 +54,7 @@ expression {
         "Variable" | "Variables" | "View"
         }
 
-    Gallina {
+    gallina {
         "as" | "at" |
         "cofix" | "crush" |
         "else" | "end" |
@@ -69,6 +69,10 @@ expression {
         "then" | "True" | "Type" |
         "when"| "with"
         }
+
+    Vernacular { " " vernacular " " }
+
+    Gallina { " " gallina " " }
 
     tactics {
         "after" | "apply" | "assert" | "auto" | "autorewrite" |
@@ -110,7 +114,7 @@ expression {
         "Admitted"
     }
 
-    @precedence { Gallina, Vernacular, tactics, terminators, admitters, Identifier }
+    @precedence { Gallina, Vernacular, tactics, terminators, admitters, Identifier, space }
 }
 
 @detectDelim
