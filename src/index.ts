@@ -17,8 +17,10 @@ let customTags = {
 }
 
 export let highlight = HighlightStyle.define([
-  { tag: customTags.gallina, color:"#6637dd" },
-  { tag: customTags.vernacular, color: "#7872d0"}
+    // { tag: customTags.gallina, color:"#6637dd" },
+    { tag: customTags.gallina, color:"#7872d0" },
+    // { tag: customTags.vernacular, color:"#7872d0"}
+    { tag: customTags.vernacular, color:"#7872d0"}
 ])
 
 export const coqLanguage = LRLanguage.define({
@@ -37,8 +39,8 @@ export const coqLanguage = LRLanguage.define({
             LineComment: t.lineComment,
             "( )": t.paren,
             // extra words
+            Gallina: customTags.gallina,
             Vernacular: customTags.vernacular,
-            gallina: customTags.gallina
         })
         ]
     }),

@@ -3,13 +3,15 @@
 @skip { space | LineComment }
 
 expression {
-  Identifier |
-  String |
-  Boolean |
-  Application { "(" expression* ")" } |
-  Vernacular
-  gallina
-  tactics
+    Identifier |
+    String |
+    Boolean |
+    Application { "(" expression* ")" } |
+    Vernacular |
+    Gallina |
+    tactics |
+    terminators | 
+    admitters
 }
 
 @tokens {
@@ -52,7 +54,7 @@ expression {
         "Variable" | "Variables" | "View"
         }
 
-    gallina {
+    Gallina {
         "as" | "at" |
         "cofix" | "crush" |
         "else" | "end" |
@@ -108,7 +110,7 @@ expression {
         "Admitted"
     }
 
-    @precedence { Vernacular, gallina, Identifier }
+    @precedence { Gallina, Vernacular, tactics, terminators, admitters, Identifier }
 }
 
 @detectDelim
