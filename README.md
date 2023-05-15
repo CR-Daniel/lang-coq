@@ -30,6 +30,7 @@ Things you'll need to do (see the [language support example](https://codemirror.
 - go to the main SEP repo
 - go to the branch "experimental/prosemirror-with-codemirror"
 - put the .tgz file in the root folder, replacing the previous one
+- change the version number in package.json for the file you just put in the root folder
 - run "npm install"
 - run "npm run serve"
 - open the index.html file from the "src" folder
