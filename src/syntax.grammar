@@ -70,9 +70,10 @@ expression {
         "when"| "with"
         }
 
-    Vernacular { "" vernacular " " }
+    interpunction { ";" | ":" | "." | "," | "?" | "<" | ">" | "=" | "+" | "!" }
+    Vernacular { "" vernacular " " | "" vernacular interpunction }
 
-    Gallina { "" gallina " " }
+    Gallina { "" gallina " "| "" gallina interpunction }
 
     tactics {
         "after" | "apply" | "assert" | "auto" | "autorewrite" |
@@ -114,7 +115,7 @@ expression {
         "Admitted"
     }
 
-    @precedence { Gallina, Vernacular, tactics, terminators, admitters, Identifier, space }
+    @precedence { String, Gallina, Vernacular, tactics, terminators, admitters, Identifier, space }
 }
 
 @detectDelim
