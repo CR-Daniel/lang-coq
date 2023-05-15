@@ -70,9 +70,9 @@ expression {
         "when"| "with"
         }
 
-    Vernacular { " " vernacular " " }
+    Vernacular { "" vernacular " " }
 
-    Gallina { " " gallina " " }
+    Gallina { "" gallina " " }
 
     tactics {
         "after" | "apply" | "assert" | "auto" | "autorewrite" |
