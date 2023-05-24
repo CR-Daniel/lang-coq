@@ -253,7 +253,7 @@ export const symbolcompletions = [
 ]
 
 export function myCompletions(context: any) {
-  let before = context.matchBefore(/(\w+\s*)+/)
+  let before = context.matchBefore(/\\*(\w*\-*\s*)+/)
   // If completion wasn't explicitly started and there
   // is no word before the cursor, don't open completions.
   if (!context.explicit && !before) return null
@@ -265,7 +265,7 @@ export function myCompletions(context: any) {
 }
 
 export function symbolCompletions(context: any) {
-  let before = context.matchBefore(/\\+\w*/)
+  let before = context.matchBefore(/\\*(\w*\-*\s*)+/)
   // If completion wasn't explicitly started and there
   // is no word before the cursor, don't open completions.
   if (!context.explicit && !before) return null
